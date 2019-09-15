@@ -10,6 +10,10 @@ body {
     color: #000000;
 }
 
+h2 {
+    color: #444444;
+}
+
 a, a:active, a:visited {
     color: #ffffff;
     text-decoration: underline;
