@@ -6,12 +6,12 @@ html {
 }
 body {
     margin-bottom: 60px; /* Margin bottom by footer height */
-    background-color: darkorange;
-    color: #000000;
+    background-color: ghostwhite;
+    color: black;
 }
 
 h2 {
-    color: #444444;
+    color: black;
 }
 
 a, a:active, a:visited {
@@ -28,7 +28,7 @@ a:hover {
     top: 100%;
     width: 100%;
     line-height: 60px; /* Vertically center the text there */
-    background-color: orange;
+    background-color: Gainsboro;
 
 }
 
