@@ -2,7 +2,7 @@
     "name": "rikmeijer/rikmeijer.nl",
     "description": "Source for rikmeijer.nl website",
     "type": "project",
-    "license": "MIT",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Rik Meijer",
