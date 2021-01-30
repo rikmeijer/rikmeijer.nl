@@ -1,0 +1,13 @@
+{
+    "name": "rikmeijer/rikmeijer.nl",
+    "description": "Source for rikmeijer.nl website",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rik Meijer",
+            "email": "github@rikmeijer.nl"
+        }
+    ],
+    "require": {}
+}
