@@ -1,21 +1,23 @@
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-    position: relative;
     min-height: 100%;
 }
 body {
-    margin-bottom: 60px; /* Margin bottom by footer height */
-    background-color: ghostwhite;
+    background-image: linear-gradient(30deg, #6588f8, #84e391);
     color: black;
 }
 
+h1 {
+    font-family: 'Bungee', cursive;
+}
 h2 {
+    font-family: 'Bungee Shade', cursive;
     color: black;
 }
 
 a, a:active, a:visited {
-    color: #ffffff;
+    color: #000000;
     text-decoration: underline;
 }
 a:hover {
@@ -23,19 +25,27 @@ a:hover {
     text-decoration: none;
 }
 
-.footer {
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    line-height: 60px; /* Vertically center the text there */
-    background-color: Gainsboro;
 
+
+footer {
+    position: fixed;
+    width: 400px;
+    bottom: 40px;
+    margin-left: -200px;
+    left: 50%;
 }
 
-.footer ul {
+.block {
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: ghostwhite;
+    border-radius: 25px;
+}
+
+footer ul {
     margin: 0;
 }
-.footer li {
+footer li {
     display: inline-block;
     margin-right: 10px;
 }
