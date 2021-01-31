@@ -6,14 +6,15 @@ html {
 body {
     background-image: linear-gradient(30deg, #6588f8, #84e391);
     color: black;
+    font-family: 'Lato', Verdana, sans-serif;
+}
+main {
+    min-width: 860px;
+    max-width: 80%;
 }
 
 h1 {
-    font-family: 'Bungee', cursive;
-}
-h2 {
-    font-family: 'Bungee Shade', cursive;
-    color: black;
+    font-family: 'Yusei Magic', cursive;
 }
 
 a, a:active, a:visited {
@@ -33,6 +34,11 @@ footer {
     bottom: 40px;
     margin-left: -200px;
     left: 50%;
+}
+
+header {
+    width: 100%;
+    text-align: center;
 }
 
 .block {
