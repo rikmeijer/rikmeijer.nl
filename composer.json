@@ -10,8 +10,11 @@
         }
     ],
     "require": {
-        "roave/security-advisories": "dev-master",
         "twig/twig": "^3.0",
-        "rikmeijer/bootstrap": "^2.1.0"
+        "rikmeijer/bootstrap": "^2.1.0",
+        "webmozart/path-util": "^2.3"
+    },
+    "require-dev" : {
+        "roave/security-advisories": "dev-master"
     }
 }
