@@ -4,7 +4,7 @@ html {
     min-height: 100%;
 }
 body {
-    background-image: linear-gradient(30deg, #6588f8, #84e391);
+    /*background-image: linear-gradient(30deg, #6588f8, #84e391);*/
     background-color: ghostwhite;
     color: black;
     font-family: 'Lato', Verdana, sans-serif;
@@ -43,12 +43,13 @@ header {
     text-space: 10px;
 }
 
-.block {
+.block{
     padding: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: ghostwhite;
     border-radius: 25px;
-
+}
+.block, .hand-border, header img {
     align-self: center;
     transition: all 0.5s ease;
     color: #41403E;
@@ -57,6 +58,11 @@ header {
    /* box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);*/
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
+
+header img {
+      border-radius: 15px 255px 15px 225px/225px 15px 225px 15px;
+  }
+
 .lined.thick, .lined.thick {
     border: solid 7px #41403E;
 }
@@ -66,7 +72,7 @@ header {
 .dashed.thick, .dashed.thick {
     border: dashed 5px #41403E;
 }
-.lined.thin, .lined.thin {
+.lined.thin, .lined.thin, header img {
     border: solid 2px #41403E;
 }
 .dotted.thin, .dotted.thin {
