@@ -1,7 +1,8 @@
-<?php declare(strict_types=1);
+<?php /** @noinspection StaticClosureCanBeUsedInspection */
+declare(strict_types=1);
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
-return static function (array $configuration): Environment {
+return function (array $configuration): Environment {
     $loader = new FilesystemLoader($configuration['templates']);
 
     $options = [];
