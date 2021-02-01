@@ -39,6 +39,7 @@ footer {
 header {
     width: 100%;
     text-align: center;
+    text-space: 10px;
 }
 
 .block {

@@ -18,7 +18,7 @@
 <main role="main" class="container vertical-center">
 <header class="block">
     <h1>Rik Meijer</h1>
-    <h2>a human being</h2>
+    <h2>een mens</h2>
 </header>
 
     <footer class="block">
