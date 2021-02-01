@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0fbf35f31756dcf14385289b7673cb52",
+    "content-hash": "dafedee32593edb30cda3207d34da38f",
     "packages": [
         {
             "name": "rikmeijer/bootstrap",
-            "version": "2.1.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rikmeijer/Bootstrap.git",
-                "reference": "8c5328d72db635afd71c4fa7f9d49ef490213416"
+                "reference": "6e6e4c911677d7ff23224baf0e09637d618f51dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rikmeijer/Bootstrap/zipball/8c5328d72db635afd71c4fa7f9d49ef490213416",
-                "reference": "8c5328d72db635afd71c4fa7f9d49ef490213416",
+                "url": "https://api.github.com/repos/rikmeijer/Bootstrap/zipball/6e6e4c911677d7ff23224baf0e09637d618f51dc",
+                "reference": "6e6e4c911677d7ff23224baf0e09637d618f51dc",
                 "shasum": ""
             },
             "require": {
@@ -40,9 +40,9 @@
             "description": "Bootstrap class for loading resources",
             "support": {
                 "issues": "https://github.com/rikmeijer/Bootstrap/issues",
-                "source": "https://github.com/rikmeijer/Bootstrap/tree/2.1.0"
+                "source": "https://github.com/rikmeijer/Bootstrap/tree/3.0.0"
             },
-            "time": "2020-06-29T13:05:29+00:00"
+            "time": "2021-02-01T19:45:18+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
