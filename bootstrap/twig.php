@@ -4,9 +4,14 @@ use rikmeijer\Bootstrap\Bootstrap;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
+
 return static function (Bootstrap $bootstrap, array $configuration): Environment {
     $loader = new FilesystemLoader($configuration['templates']);
-    return new Environment($loader, [
-        'cache' => $configuration['cache'],
-    ]);
+
+    $options = [];
+    if (is_null($configuration['cache']) === false) {
+        $options['cache'] = $configuration['cache'];
+    }
+
+    return new Environment($loader, $options);
 };
