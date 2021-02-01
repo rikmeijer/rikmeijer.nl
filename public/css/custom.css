@@ -5,6 +5,7 @@ html {
 }
 body {
     background-image: linear-gradient(30deg, #6588f8, #84e391);
+    background-color: ghostwhite;
     color: black;
     font-family: 'Lato', Verdana, sans-serif;
 }
@@ -30,9 +31,9 @@ a:hover {
 
 footer {
     position: fixed;
-    width: 400px;
+    width: 500px;
     bottom: 40px;
-    margin-left: -200px;
+    margin-left: -250px;
     left: 50%;
 }
 
@@ -47,6 +48,32 @@ header {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: ghostwhite;
     border-radius: 25px;
+
+    align-self: center;
+    transition: all 0.5s ease;
+    color: #41403E;
+    letter-spacing: 1px;
+    outline: none;
+   /* box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);*/
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+.lined.thick, .lined.thick {
+    border: solid 7px #41403E;
+}
+.dotted.thick, .dotted.thick {
+    border: dotted 5px #41403E;
+}
+.dashed.thick, .dashed.thick {
+    border: dashed 5px #41403E;
+}
+.lined.thin, .lined.thin {
+    border: solid 2px #41403E;
+}
+.dotted.thin, .dotted.thin {
+    border: dotted 2px #41403E;
+}
+.dashed.thin, .dashed.thin {
+    border: dashed 2px #41403E;
 }
 
 footer ul {
@@ -54,7 +81,6 @@ footer ul {
 }
 footer li {
     display: inline-block;
-    margin-right: 10px;
 }
 
 .vertical-center {

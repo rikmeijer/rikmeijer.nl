@@ -16,18 +16,14 @@
 </head>
 <body>
 <main role="main" class="container vertical-center">
-<header class="block">
+<header class="block lined thin">
     <h1>Rik Meijer</h1>
     <h2>een mens</h2>
 </header>
 
-    <footer class="block">
+    <footer class="block lined thin">
         <div class="container text-center">
-            <small class="text-muted">Copyright &copy; Rik Meijer <?=date("Y");?></small>
-            <ul>
-                <li><a href="https://github.com/rikmeijer" rel="me"><img src="img/GitHub-Mark-32px.png" height="16" width="16"/> </a></li>
-                <li><a href="mailto:hello@rikmeijer.nl" rel="me">hello@rikmeijer.nl</a></li>
-            </ul>
+            &copy; <?=date("Y");?>, Rik Meijer&nbsp;&bull;&nbsp;<a href="https://github.com/rikmeijer" rel="me"><img src="img/GitHub-Mark-32px.png" height="16" width="16"/></a>&nbsp;&bull;&nbsp;<a href="mailto:hello@rikmeijer.nl" rel="me">hello@rikmeijer.nl</a>
             <link rel="pgpkey" href="/key.gpg">
         </div>
 
