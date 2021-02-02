@@ -15,6 +15,13 @@
         "webmozart/path-util": "^2.3"
     },
     "require-dev" : {
-        "roave/security-advisories": "dev-master"
+        "roave/security-advisories": "dev-master",
+        "phpunit/phpunit": "^9.1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "rikmeijer\\rikmeijernl\\": "src/",
+            "rikmeijer\\rikmeijernl\\tests\\": "tests/"
+        }
     }
 }
