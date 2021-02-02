@@ -12,5 +12,6 @@ return function (array $configuration): Environment {
 
     $twig = new Environment($loader, $options);
     $this->resource('twig/img')($twig);
+    $this->resource('twig/subresource')($twig);
     return $twig;
 };
