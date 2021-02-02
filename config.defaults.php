@@ -3,7 +3,7 @@
 use Webmozart\PathUtil\Path;
 
 return [
-    'deployer' => [
+    'selfupdater' => [
         'stage' => 'production'
     ],
     'twig' => [ // must be same as basename of resource loader
