@@ -11,7 +11,7 @@ return [
         'cache' => Path::join(__DIR__, 'storage', 'twig')
     ],
     'twig/img' => [
-        'images' => "/img/"
+        'images' => "/img"
     ],
     'twig/subresource' => [
         'integrity-hashes' => [
