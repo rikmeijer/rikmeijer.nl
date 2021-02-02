@@ -1,34 +1,9 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% extends "html5.twig" %}
 
-    <!-- Bootstrap CSS -->
-    {{ subresource("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css") }}
-    {{ subresource("/css/custom.css") }}
-
-    <title>Rik Meijer</title>
-</head>
-<body>
-<main role="main" class="container vertical-center">
+{% block body %}
     <header class="block lined thin">
         <h1>Rik Meijer</h1>
         {{ img("/photos/IMG_1088.JPG", 0.3) }}
         <h2>een mens</h2>
     </header>
-
-    <footer class="block lined thin">
-        <div class="container text-center">
-            &copy; {{ "now"|date("Y") }}, Rik Meijer&nbsp;&bull;&nbsp;<a href="https://github.com/rikmeijer" rel="me">{{ img("/GitHub-Mark-32px.png", 16) }}</a>&nbsp;&bull;&nbsp;<a href="mailto:hello@rikmeijer.nl" rel="me">hello@rikmeijer.nl</a>
-            {{ subresource("/key.gpg") }}
-        </div>
-
-    </footer>
-</main>
-{{ subresource("https://code.jquery.com/jquery-3.2.1.slim.min.js") }}
-{{ subresource("https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js") }}
-{{ subresource("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js") }}
-</body>
-</html>
+{% endblock %}
