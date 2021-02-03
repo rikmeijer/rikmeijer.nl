@@ -13,7 +13,7 @@ return function (array $configuration): Closure {
             print 'done';
 
             print PHP_EOL . 'Setting rights and ownership on ' . $path . '...';
-            chmod($path, 0755);
+            chmod($path, 0775);
             chown($path, $configuration['www-user']);
             chgrp($path, $configuration['www-group']);
             print 'done';
