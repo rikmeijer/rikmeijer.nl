@@ -10,6 +10,8 @@
         }
     ],
     "require": {
+        "php" : "^7.4||^8.0",
+        "ext-pdo": "*",
         "twig/twig": "^3.0",
         "rikmeijer/bootstrap": "^3.0.0",
         "webmozart/path-util": "^2.3",

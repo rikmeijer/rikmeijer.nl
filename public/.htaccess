@@ -6,7 +6,7 @@
 
 RewriteEngine On
 # This makes every request go to server.php
-RewriteRule ^dav/(.*)$ /dav.php [L]
+RewriteRule ^dav(/(.*))?$ /dav.php [L]
 
 # Output buffering needs to be off, to prevent high memory usage
 php_flag output_buffering off
