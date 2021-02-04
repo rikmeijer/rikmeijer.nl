@@ -34,7 +34,7 @@ return function (array $configuration): Closure {
         $storageDirectory = Path::join($workingDir, 'storage');
         $createDirectory($storageDirectory);
 
-        $storages = ['twig', 'webdav', 'sabre', 'sabre/data', 'sabre/public'];
+        $storages = ['twig', 'webdav', 'sabre', 'sabre/data', 'sabre/files'];
         foreach ($storages as $storage) {
             $createDirectory(Path::join($storageDirectory, $storage));
         }
