@@ -23,11 +23,6 @@ return [
             "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" => "sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         ]
     ],
-    'sabre/pdo' => [
-        'dsn' => 'mysql:host=pi4.home.rikmeijer.nl;dbname=baikal',
-        'username' => 'baikal',
-        'password' => 'sYhNNxTj'
-    ],
     'sabre' => [
         'files-path' => Path::join(__DIR__, 'storage', 'sabre', 'files')
     ],
