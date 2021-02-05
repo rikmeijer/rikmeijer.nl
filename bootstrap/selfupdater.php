@@ -5,19 +5,6 @@ use Webmozart\PathUtil\Path;
 
 return function (array $configuration): Closure {
     return function(string $workingDir) use ($configuration) {
-        $createDirectory = function(string $path) use ($configuration) : void {
-            print PHP_EOL . 'Creating ' . $path . '...';
-            if (!@mkdir($path) && !is_dir($path)) {
-                throw new RuntimeException(sprintf('Directory "%s" was not created', $path));
-            }
-            print 'done';
-
-            print PHP_EOL . 'Setting rights and ownership on ' . $path . '...';
-            chmod($path, 0775);
-            chown($path, $configuration['www-user']);
-            chgrp($path, $configuration['www-group']);
-            print 'done';
-        };
 
         chdir($workingDir);
         switch ($configuration['stage']) {
@@ -31,12 +18,7 @@ return function (array $configuration): Closure {
                 break;
         }
 
-        $storageDirectory = Path::join($workingDir, 'storage');
-        $createDirectory($storageDirectory);
-
-        $storages = ['twig', 'webdav', 'sabre', 'sabre/data', 'sabre/files'];
-        foreach ($storages as $storage) {
-            $createDirectory(Path::join($storageDirectory, $storage));
-        }
+        $createDirectory = $this->resource('selfupdater/storage')(Path::join($workingDir, 'storage'));
+        array_map($createDirectory, $configuration['storages']);
     };
 };
