@@ -30,7 +30,9 @@ a:hover {
     text-decoration: none;
 }
 
-
+section > div.row {
+    margin: 20px;
+}
 
 footer {
     position: fixed;
@@ -92,8 +94,7 @@ footer li {
 }
 
 .vertical-center {
-    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-    min-height: 100vh; /* These two lines are counted as one :-)       */
+    min-height: 100vh;
 
     display: flex;
     align-items: center;

@@ -48,6 +48,9 @@
       <path value="$PROJECT_DIR$/vendor/sabre/event" />
       <path value="$PROJECT_DIR$/vendor/sabre/dav" />
       <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/jblond/twig-trans" />
+      <path value="$PROJECT_DIR$/vendor/codezero/browser-locale" />
+      <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />

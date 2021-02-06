@@ -3,8 +3,12 @@ declare(strict_types=1);
 
 return function (array $configuration): Closure {
     return function(string $path) use ($configuration) : void {
+        if (is_dir($path)) {
+            return;
+        }
+
         print PHP_EOL . 'Creating ' . $path . '...';
-        if (!@mkdir($path) && !is_dir($path)) {
+        if (!@mkdir($path, 0777, true) && !is_dir($path)) {
             throw new RuntimeException(sprintf('Directory "%s" was not created', $path));
         }
         print 'done';

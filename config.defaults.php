@@ -5,11 +5,15 @@ use Webmozart\PathUtil\Path;
 return [
     'selfupdater' => [
         'stage' => 'production',
-        'storages' => ['twig', 'sabre', 'sabre/data', 'sabre/files']
+        'storages' => ['twig', 'sabre', 'sabre/data', 'sabre/files', 'sabre/files/blog']
     ],
     'selfupdater/directory' => [
         'www-user' => 'www-data', // Ubuntu
         'www-group' => 'www-data' // Ubuntu
+    ],
+    'site-builder' => [
+        'from' => Path::join(__DIR__, 'storage', 'sabre', 'files'),
+        'to' => Path::join(__DIR__, 'public')
     ],
     'twig' => [ // must be same as basename of resource loader
         'templates' => Path::join(__DIR__, 'resources', 'twig'),
