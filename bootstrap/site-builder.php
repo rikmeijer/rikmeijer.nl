@@ -15,18 +15,18 @@ return function (array $configuration): Closure {
         $posts = [];
         foreach (glob($configuration['from'] . DIRECTORY_SEPARATOR . 'blog' . DIRECTORY_SEPARATOR . '*.md') as $post) {
             print PHP_EOL . 'Parsing ' . basename($post) . '...';
-            list($dateUnparsed, $postname) = explode('-', basename($post, '.md'), 2);
+            list($dateUnparsed, $title) = explode('-', basename($post, '.md'), 2);
             $date = DateTime::createFromFormat('Ymd', $dateUnparsed);
 
-            $uri = '/blog/' . $date->format('Y/m/d/') . $postname . '.html';
+            $uri = '/blog/' . $date->format('Y/m/d/') . $title . '.html';
 
             $htmlFile = Path::join($configuration['to'], $uri);
             $createDirectory(dirname($htmlFile));
             file_put_contents($htmlFile,
-                $twig->render('blog/post.twig', ['content' => $parsedown->parse(file_get_contents($post))]));
+                $twig->render('blog/post.twig', ['title' => $title, 'content' => $parsedown->parse(file_get_contents($post))]));
 
             $posts[$uri] = [
-                'title' => $postname,
+                'title' => $title,
                 'intro' => ""
             ];
         }
