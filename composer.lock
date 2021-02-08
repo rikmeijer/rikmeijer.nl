@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "27b4d090d10f880ccb5cb4e0f2703617",
+    "content-hash": "9a53d35d5ac3af52764e9157f4826118",
     "packages": [
         {
             "name": "codezero/browser-locale",
@@ -3335,7 +3335,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4||^8.0",
+        "php": "^8.0",
         "ext-pdo": "*"
     },
     "platform-dev": [],
