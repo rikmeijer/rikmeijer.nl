@@ -3,7 +3,7 @@
 {% block body %}
     <section class="block lined thin">
     <header>
-        <h1>Rik Meijer</h1>
+        <h1 class="display-1">Rik Meijer</h1>
         {{ img("/photos/IMG_1088.JPG", 0.3) }}
         <h2>een mens</h2>
     </header>
@@ -12,7 +12,7 @@
         <div class="row">
             {% for uri, post in posts %}
                 <div class="col-lg-4">
-                    <h2><a href="{{ uri }}">{{ post.title }}</a></h2>
+                    <h3><a href="{{ uri }}">{{ post.title }}</a></h3>
                     <p>{{ intro|raw }}</p>
                 </div>
             {% endfor %}

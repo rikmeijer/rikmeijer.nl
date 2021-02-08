@@ -13,16 +13,14 @@
 </head>
 <body>
 
-<main role="main" class="container vertical-center">
+<main role="main" class="w-75 mx-auto">
     {% block body %}
     {% endblock %}
-    <footer class="block lined thin">
-        <div class="container text-center">
-            &copy; {{ "now"|date("Y") }}, Rik Meijer&nbsp;&bull;&nbsp;<a href="https://github.com/rikmeijer" rel="me">{{ img("/GitHub-Mark-32px.png", 16) }}</a>&nbsp;&bull;&nbsp;<a href="mailto:hello@rikmeijer.nl" rel="me">hello@rikmeijer.nl</a>
-            {{ subresource("/key.gpg") }}
-        </div>
-    </footer>
 </main>
+<footer class="fixed-bottom w-75 mx-auto block lined thin text-center">
+    <p>&copy; {{ "now"|date("Y") }}, Rik Meijer&nbsp;&bull;&nbsp;<a href="https://github.com/rikmeijer" rel="me">{{ img("/GitHub-Mark-32px.png", 16) }}</a>&nbsp;&bull;&nbsp;<a href="mailto:hello@rikmeijer.nl" rel="me">hello@rikmeijer.nl</a></p>
+    {{ subresource("/key.gpg") }}
+</footer>
 
 {{ subresource("https://code.jquery.com/jquery-3.2.1.slim.min.js") }}
 {{ subresource("https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js") }}

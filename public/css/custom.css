@@ -3,19 +3,15 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Gochi Hand');
 
-html {
-    min-height: 100%;
-}
+
 body {
     /*background-image: linear-gradient(30deg, #6588f8, #84e391);*/
     background-color: ghostwhite;
     color: black;
     font-family: 'Lato', Verdana, sans-serif;
+    padding: 20px;
 }
-main {
-    min-width: 860px;
-    max-width: 80%;
-}
+
 
 h1 {
     font-family: 'Gochi Hand', cursive;
@@ -34,16 +30,7 @@ section > div.row {
     margin: 20px;
 }
 
-footer {
-    position: fixed;
-    width: 500px;
-    bottom: 40px;
-    margin-left: -250px;
-    left: 50%;
-}
-
 header {
-    width: 100%;
     text-align: center;
     text-space: 10px;
 }
@@ -86,16 +73,13 @@ header img {
     border: dashed 2px #41403E;
 }
 
+body > footer {
+    margin: 20px;
+}
+
 footer ul {
     margin: 0;
 }
 footer li {
     display: inline-block;
-}
-
-.vertical-center {
-    min-height: 100vh;
-
-    display: flex;
-    align-items: center;
 }

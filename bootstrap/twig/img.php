@@ -12,7 +12,7 @@ return function (array $configuration): Closure {
             } else {
                 $width = "".$size;
             }
-            return '<img src="' . htmlentities($configuration['images'] . $path) . '" width="' . htmlentities($width) . '" />';
+            return '<img src="' . htmlentities($configuration['images'] . $path) . '" class="img-fluid" width="' . htmlentities($width) . '" />';
         }, ['is_safe' => ['html']]));
     };
 };
