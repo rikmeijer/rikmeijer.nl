@@ -75,3 +75,4 @@ fabric.properties
 storage
 /.phpunit.result.cache
 config.php
+/composer.phar
