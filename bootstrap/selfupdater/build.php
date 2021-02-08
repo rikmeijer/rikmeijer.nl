@@ -8,7 +8,6 @@ return function (array $configuration): Closure {
         print 'Opening blogs in ' . $configuration['from'];
 
         $parsedown = $this->resource('parsedown');
-        assert($parsedown instanceof Parsedown);
 
         $twig = $this->resource('twig');
         $createDirectory = $this->resource('selfupdater/directory');
@@ -23,7 +22,7 @@ return function (array $configuration): Closure {
             $htmlFile = Path::join($configuration['to'], $uri);
             $createDirectory(dirname($htmlFile));
             file_put_contents($htmlFile,
-                $twig->render('blog/post.twig', ['title' => $title, 'content' => $parsedown->parse(file_get_contents($post))]));
+                $twig->render('blog/post.twig', ['title' => $title, 'content' => $parsedown(file_get_contents($post))]));
 
             $posts[$uri] = [
                 'title' => $title,
