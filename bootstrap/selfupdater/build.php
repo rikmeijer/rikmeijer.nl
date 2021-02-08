@@ -21,8 +21,10 @@ return function (array $configuration): Closure {
 
             $htmlFile = Path::join($configuration['to'], $uri);
             $createDirectory(dirname($htmlFile));
-            file_put_contents($htmlFile,
-                $twig->render('blog/post.twig', ['title' => $title, 'content' => $parsedown(file_get_contents($post))]));
+            file_put_contents($htmlFile, $twig->render('blog/post.twig', [
+                'title' => $title,
+                'content' => $parsedown(file_get_contents($post))
+            ]));
 
             $posts[$uri] = [
                 'title' => $title,
@@ -31,7 +33,8 @@ return function (array $configuration): Closure {
         }
 
         print PHP_EOL . 'Generating index...';
-        file_put_contents($configuration['to'] . DIRECTORY_SEPARATOR . 'index.html', $twig->render('index.twig', ['posts' => $posts]));
+        file_put_contents($configuration['to'] . DIRECTORY_SEPARATOR . 'index.html',
+            $twig->render('index.twig', ['posts' => $posts]));
         print PHP_EOL . 'done';
 
         print PHP_EOL . 'Generating CSS...';
