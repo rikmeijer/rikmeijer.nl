@@ -53,7 +53,7 @@
       <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
   <component name="PhpRuntimeConfiguration" document_root_path="public" />
   <component name="PhpUnit">
     <phpunit_settings>
