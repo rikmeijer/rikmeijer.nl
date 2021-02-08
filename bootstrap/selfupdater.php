@@ -21,6 +21,6 @@ return function (array $configuration): Closure {
         $createDirectory = $this->resource('selfupdater/storage')(Path::join($workingDir, 'storage'));
         array_map($createDirectory, $configuration['storages']);
 
-        exec($configuration['php-binary'] . ' build.php');
+        passthru($configuration['php-binary'] . ' build.php');
     };
 };
