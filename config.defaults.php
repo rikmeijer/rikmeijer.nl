@@ -11,7 +11,7 @@ return [
         'www-user' => 'www-data', // Ubuntu
         'www-group' => 'www-data' // Ubuntu
     ],
-    'site-builder' => [
+    'selfupdater/build' => [
         'from' => Path::join(__DIR__, 'storage', 'sabre', 'files'),
         'to' => Path::join(__DIR__, 'public'),
         'custom-scss' => Path::join(__DIR__, 'resources', 'scss', 'custom.scss'),
