@@ -13,7 +13,8 @@ return [
     ],
     'site-builder' => [
         'from' => Path::join(__DIR__, 'storage', 'sabre', 'files'),
-        'to' => Path::join(__DIR__, 'public')
+        'to' => Path::join(__DIR__, 'public'),
+        'custom-scss' => Path::join(__DIR__, 'resources', 'scss', 'custom.scss'),
     ],
     'twig' => [ // must be same as basename of resource loader
         'templates' => Path::join(__DIR__, 'resources', 'twig'),

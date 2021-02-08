@@ -75,3 +75,5 @@ fabric.properties
 storage
 /.phpunit.result.cache
 config.php
+/public/css
+/public/css.map

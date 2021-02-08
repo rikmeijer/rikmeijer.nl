@@ -35,5 +35,10 @@ return function (array $configuration): Closure {
         file_put_contents($configuration['to'] . DIRECTORY_SEPARATOR . 'index.html', $twig->render('index.twig', ['posts' => $posts]));
         print PHP_EOL . 'done';
 
+        print PHP_EOL . 'Generating CSS...';
+        $customCSSFile = Path::join($configuration['to'], 'css', 'custom.css');
+        $createDirectory(dirname($customCSSFile));
+        passthru($configuration['sass-binary'] . ' ' . escapeshellarg($configuration['custom-scss']) . ' ' . escapeshellarg($customCSSFile));
+        echo 'done';
     };
 };
