@@ -1,15 +1,15 @@
 <?php /** @noinspection StaticClosureCanBeUsedInspection */
 declare(strict_types=1);
 
+use rikmeijer\Bootstrap\Dependency;
 use Webmozart\PathUtil\Path;
 
-return function (array $configuration): Closure {
-    return function () use ($configuration) {
-
-        $createDirectory = $this->resource('selfupdater/directory');
-
+return
+    #[Dependency(createDirectory: "selfupdater/directory", siteBuilder: "selfupdater/build/site")]
+    function (array $configuration, Closure $createDirectory, Closure $siteBuilder): Closure {
+    return function () use ($configuration, $createDirectory, $siteBuilder) {
         print PHP_EOL . 'Generating site...';
-        $this->resource('selfupdater/build/site')($configuration['to']);
+        $siteBuilder($configuration['to']);
         print 'done';
 
         print PHP_EOL . 'Generating CSS...';

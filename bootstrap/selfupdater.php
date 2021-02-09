@@ -1,17 +1,25 @@
 <?php /** @noinspection StaticClosureCanBeUsedInspection */
 declare(strict_types=1);
 
+use rikmeijer\Bootstrap\Dependency;
 use Webmozart\PathUtil\Path;
 
-return function (array $configuration): Closure {
-    return function(string $workingDir) use ($configuration) {
-        chdir($workingDir);
+return
+    #[Dependency(storage: "selfupdater/storage", builder: "selfupdater/build")]
+    function (
+        array $configuration,
+        Closure $storage,
+        Closure $builder
+    ): Closure {
+        $stage = $this->resource('selfupdater/stages/' . $configuration['stage']);
+        return function (string $workingDir) use ($configuration, $stage, $storage, $builder) {
+            chdir($workingDir);
 
-        $this->resource('selfupdater/stages/' . $configuration['stage'])($configuration['php-binary'] . ' composer.phar install');
+            $stage($configuration['php-binary'] . ' composer.phar install');
 
-        $createDirectory = $this->resource('selfupdater/storage')(Path::join($workingDir, 'storage'));
-        array_map($createDirectory, $configuration['storages']);
+            $createDirectory = $storage(Path::join($workingDir, 'storage'));
+            array_map($createDirectory, $configuration['storages']);
 
-        $this->resource('selfupdater/build')();
+            $builder();
+        };
     };
-};

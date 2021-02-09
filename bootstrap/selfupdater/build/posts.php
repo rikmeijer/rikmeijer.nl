@@ -1,8 +1,11 @@
 <?php /** @noinspection StaticClosureCanBeUsedInspection */
 declare(strict_types=1);
 
-return function (array $configuration): Closure {
-    $buildPost = $this->resource('selfupdater/build/post');
+use rikmeijer\Bootstrap\Dependency;
+
+return
+    #[Dependency(buildPost: "selfupdater/build/post")]
+    function (array $configuration, Closure $buildPost): Closure {
     return function(string $to) use ($configuration, $buildPost) : array {
         print PHP_EOL . 'Opening blogs in ' . $configuration['from'];
         $posts = [];

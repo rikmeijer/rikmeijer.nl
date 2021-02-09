@@ -2,11 +2,12 @@
 declare(strict_types=1);
 
 use Sabre\DAV;
+use rikmeijer\Bootstrap\Dependency;
 
-return function (array $configuration): DAV\Server {
+return
+    #[Dependency(pdo: "sabre/pdo", auth: "sabre/auth")]
+    function (array $configuration, PDO $pdo, Closure $auth): DAV\Server {
     $rootDirectory = new DAV\FS\Directory($configuration['files-path']);
-
-    $pdo = $this->resource('sabre/pdo');
 
     $principalBackend = new Sabre\DAVACL\PrincipalBackend\PDO($pdo);
 
@@ -18,8 +19,6 @@ return function (array $configuration): DAV\Server {
     ]);
     $server->setBaseUri('/dav');
 
-    $pdo = $this->resource('sabre/pdo');
-
     $lockBackend = new DAV\Locks\Backend\PDO($pdo);
     $lockPlugin = new DAV\Locks\Plugin($lockBackend);
     $server->addPlugin($lockPlugin);
@@ -30,7 +29,7 @@ return function (array $configuration): DAV\Server {
     $carddavPlugin = new Sabre\CardDAV\Plugin();
     $server->addPlugin($carddavPlugin);
 
-    $server->addPlugin($this->resource('sabre/auth')($pdo));
+    $server->addPlugin($auth($pdo));
 
     $aclPlugin = new Sabre\DAVACL\Plugin();
     $server->addPlugin($aclPlugin);

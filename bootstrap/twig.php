@@ -2,7 +2,11 @@
 declare(strict_types=1);
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
-return function (array $configuration): Closure {
+use rikmeijer\Bootstrap\Dependency;
+
+return
+    #[Dependency(img: "twig/img", subresource : "twig/subresource")]
+    function (array $configuration, Closure $img, Closure $subresource): Closure {
     $loader = new FilesystemLoader($configuration['templates']);
 
     $options = [];
@@ -11,8 +15,8 @@ return function (array $configuration): Closure {
     }
 
     $twig = new Environment($loader, $options);
-    $this->resource('twig/img')($twig);
-    $this->resource('twig/subresource')($twig);
+    $img($twig);
+    $subresource($twig);
     return function(string $name, array $context) use ($twig) {
         return $twig->render($name, $context);
     };

@@ -2,10 +2,11 @@
 declare(strict_types=1);
 
 use Webmozart\PathUtil\Path;
+use rikmeijer\Bootstrap\Dependency;
 
-return function (): Closure {
-    $md2html = $this->resource('selfupdater/build/md2html');
-    $createDirectory = $this->resource('selfupdater/directory');
+return
+    #[Dependency(md2html: "selfupdater/build/md2html", createDirectory : "selfupdater/directory")]
+    function (Closure $md2html, Closure $createDirectory): Closure {
     return function(string $post, string $to, callable $posts) use ($md2html, $createDirectory) : void {
         list($dateUnparsed, $title) = explode('-', basename($post, '.md'), 2);
         $date = DateTime::createFromFormat('Ymd', $dateUnparsed);
