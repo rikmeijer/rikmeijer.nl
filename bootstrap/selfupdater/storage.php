@@ -5,7 +5,7 @@ use rikmeijer\Bootstrap\Dependency;
 use Webmozart\PathUtil\Path;
 
 return
-    #[Dependency(createDirectory: "selfupdater/directory", builder: "selfupdater/build")]
+    #[Dependency(createDirectory: "selfupdater/directory")]
     function (Closure $createDirectory): Closure {
     return function(string $storageDirectory) use ($createDirectory) : Closure {
         $createDirectory($storageDirectory);

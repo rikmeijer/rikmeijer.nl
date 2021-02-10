@@ -16,7 +16,7 @@
         "ext-dom": "*",
         "twbs/bootstrap": "5.0.0-beta1",
         "twig/twig": "^3.0",
-        "rikmeijer/bootstrap": "^4.0.0",
+        "rikmeijer/bootstrap": "^5.0.0",
         "webmozart/path-util": "^2.3",
         "jblond/twig-trans": "v1.0.5",
         "codezero/browser-locale": "^3.1.0",

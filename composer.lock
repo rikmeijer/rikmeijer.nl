@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "30b9e6fd1354d09c0c305bdc9142baf6",
+    "content-hash": "2b3b3b21606c92f0c128d226fb96fabe",
     "packages": [
         {
             "name": "codezero/browser-locale",
@@ -235,16 +235,16 @@
         },
         {
             "name": "rikmeijer/bootstrap",
-            "version": "4.0.0",
+            "version": "5.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rikmeijer/Bootstrap.git",
-                "reference": "4ca1e45df9791ad81ec61d6f8225465db647c0c0"
+                "reference": "545841a66542db620f433765c1dbb33519915eb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rikmeijer/Bootstrap/zipball/4ca1e45df9791ad81ec61d6f8225465db647c0c0",
-                "reference": "4ca1e45df9791ad81ec61d6f8225465db647c0c0",
+                "url": "https://api.github.com/repos/rikmeijer/Bootstrap/zipball/545841a66542db620f433765c1dbb33519915eb6",
+                "reference": "545841a66542db620f433765c1dbb33519915eb6",
                 "shasum": ""
             },
             "require": {
@@ -264,12 +264,12 @@
             "license": [
                 "MIT"
             ],
-            "description": "Bootstrap class for loading resources",
+            "description": "Bootstrap Closure for loading resources",
             "support": {
                 "issues": "https://github.com/rikmeijer/Bootstrap/issues",
-                "source": "https://github.com/rikmeijer/Bootstrap/tree/4.0.0"
+                "source": "https://github.com/rikmeijer/Bootstrap/tree/5.0.2"
             },
-            "time": "2021-02-09T14:56:43+00:00"
+            "time": "2021-02-10T10:08:15+00:00"
         },
         {
             "name": "sabre/dav",
@@ -2049,12 +2049,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "f7d723a10c7cb36e11430182f5813ecb1b887da0"
+                "reference": "5f40d4d577a71466f9723122251b46bdaf634709"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/f7d723a10c7cb36e11430182f5813ecb1b887da0",
-                "reference": "f7d723a10c7cb36e11430182f5813ecb1b887da0",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/5f40d4d577a71466f9723122251b46bdaf634709",
+                "reference": "5f40d4d577a71466f9723122251b46bdaf634709",
                 "shasum": ""
             },
             "conflict": {
@@ -2171,7 +2171,7 @@
                 "october/backend": ">=1.0.319,<1.0.470",
                 "october/cms": "= 1.0.469|>=1.0.319,<1.0.469",
                 "october/october": ">=1.0.319,<1.0.466",
-                "october/rain": ">=1.0.319,<1.0.468",
+                "october/rain": "<1.0.472|>=1.1,<1.1.2",
                 "onelogin/php-saml": "<2.10.4",
                 "oneup/uploader-bundle": "<1.9.3|>=2,<2.1.5",
                 "openid/php-openid": "<2.3",
@@ -2215,7 +2215,7 @@
                 "sensiolabs/connect": "<4.2.3",
                 "serluck/phpwhois": "<=4.2.6",
                 "shopware/core": "<=6.3.4",
-                "shopware/platform": "<=6.3.4",
+                "shopware/platform": "<=6.3.5",
                 "shopware/shopware": "<5.6.9",
                 "silverstripe/admin": ">=1.0.3,<1.0.4|>=1.1,<1.1.1",
                 "silverstripe/assets": ">=1,<1.4.7|>=1.5,<1.5.2",
@@ -2366,7 +2366,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-02T10:05:32+00:00"
+            "time": "2021-02-10T03:02:31+00:00"
         },
         {
             "name": "sebastian/cli-parser",
