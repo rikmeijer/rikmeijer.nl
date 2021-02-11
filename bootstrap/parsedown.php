@@ -1,9 +1,7 @@
-<?php /** @noinspection StaticClosureCanBeUsedInspection */
+<?php /** @noinspection PhpUndefinedVariableInspection */
 declare(strict_types=1);
 
-return function (): Closure {
+return function (string $markdown) : string {
     $parsedown = new Parsedown();
-    return function(string $markdown) use ($parsedown) : string {
-        return $parsedown->parse($markdown);
-    };
+    return $parsedown->parse($markdown);
 };

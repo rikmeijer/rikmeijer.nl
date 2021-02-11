@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2b3b3b21606c92f0c128d226fb96fabe",
+    "content-hash": "ad323230551fbbce0aa6e981b0aa2708",
     "packages": [
         {
             "name": "codezero/browser-locale",
@@ -235,16 +235,16 @@
         },
         {
             "name": "rikmeijer/bootstrap",
-            "version": "5.0.2",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rikmeijer/Bootstrap.git",
-                "reference": "545841a66542db620f433765c1dbb33519915eb6"
+                "reference": "08105c4a77850003beeb8b1c03c41d161050227e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rikmeijer/Bootstrap/zipball/545841a66542db620f433765c1dbb33519915eb6",
-                "reference": "545841a66542db620f433765c1dbb33519915eb6",
+                "url": "https://api.github.com/repos/rikmeijer/Bootstrap/zipball/08105c4a77850003beeb8b1c03c41d161050227e",
+                "reference": "08105c4a77850003beeb8b1c03c41d161050227e",
                 "shasum": ""
             },
             "require": {
@@ -267,9 +267,9 @@
             "description": "Bootstrap Closure for loading resources",
             "support": {
                 "issues": "https://github.com/rikmeijer/Bootstrap/issues",
-                "source": "https://github.com/rikmeijer/Bootstrap/tree/5.0.2"
+                "source": "https://github.com/rikmeijer/Bootstrap/tree/1.0.0"
             },
-            "time": "2021-02-10T10:08:15+00:00"
+            "time": "2021-02-11T13:06:27+00:00"
         },
         {
             "name": "sabre/dav",

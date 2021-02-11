@@ -1,12 +1,10 @@
-<?php /** @noinspection StaticClosureCanBeUsedInspection */
+<?php /** @noinspection PhpUndefinedVariableInspection */
 declare(strict_types=1);
 
 use Sabre\DAV\Auth;
 
-return function (array $configuration) : Closure {
-    return function(PDO $pdo) use ($configuration) : Auth\Plugin {
-        $authBackend = new Auth\Backend\PDO($pdo);
-        $authBackend->setRealm($configuration['realm']);
-        return new Auth\Plugin($authBackend);
-    };
+return static function() use ($configuration, $bootstrap) : Auth\Plugin {
+    $authBackend = new Auth\Backend\PDO($bootstrap('sabre/pdo'));
+    $authBackend->setRealm($configuration['realm']);
+    return new Auth\Plugin($authBackend);
 };

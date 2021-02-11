@@ -1,13 +1,6 @@
-<?php /** @noinspection StaticClosureCanBeUsedInspection */
+<?php /** @noinspection PhpUndefinedVariableInspection */
 declare(strict_types=1);
 
-use rikmeijer\Bootstrap\Dependency;
-
-return
-    #[Dependency(twig: "twig", posts : "selfupdater/build/posts")]
-    function (Closure $twig, Closure $posts): Closure {
-        return function(string $to) use ($twig, $posts) : void {
-            file_put_contents($to . DIRECTORY_SEPARATOR . 'index.html',
-                $twig('index.twig', ['posts' => $posts($to)]));
-    };
+return static function (string $to) use ($bootstrap): void {
+    file_put_contents($to . DIRECTORY_SEPARATOR . 'index.html', $bootstrap("twig", 'index.twig', ['posts' => $bootstrap("selfupdater/build/posts", $to)]));
 };

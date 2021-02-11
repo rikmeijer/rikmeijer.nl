@@ -4,7 +4,7 @@ use Webmozart\PathUtil\Path;
 
 return [
     'selfupdater' => [
-        'stage' => 'production',
+        'load-development-libraries' => false,
         'storages' => ['twig', 'sabre', 'sabre/data', 'sabre/files', 'sabre/files/blog']
     ],
     'selfupdater/directory' => [
