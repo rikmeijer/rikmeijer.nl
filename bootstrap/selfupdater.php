@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 use Webmozart\PathUtil\Path;
 
+$configuration = $validate([]);
+
 return static function (string $workingDir) use ($configuration, $bootstrap): void {
     chdir($workingDir);
 

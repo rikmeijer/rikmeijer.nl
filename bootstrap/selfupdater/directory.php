@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 use Webmozart\PathUtil\Path;
 
+$configuration = $validate([]);
+
 return $creator = static function (string $path) use (&$creator, $configuration): callable {
     if (!is_dir($path)) {
         print PHP_EOL . 'Creating ' . $path . '...';

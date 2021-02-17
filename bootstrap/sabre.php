@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 use Sabre\DAV;
 
+$configuration = $validate([]);
+
 return static function () use ($configuration, $bootstrap): DAV\Server {
     $pdo = $bootstrap("sabre/pdo");
     $rootDirectory = new DAV\FS\Directory($configuration['files-path']);

@@ -1,6 +1,8 @@
 <?php /** @noinspection PhpUndefinedVariableInspection */
 declare(strict_types=1);
 
+$configuration = $validate([]);
+
 return static function (string $to) use ($configuration, $bootstrap): array {
     print PHP_EOL . 'Opening blogs in ' . $configuration['from'];
     $posts = [];

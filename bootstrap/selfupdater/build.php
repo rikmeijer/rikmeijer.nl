@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 use Webmozart\PathUtil\Path;
 
+$configuration = $validate([]);
+
 return static function () use ($configuration, $bootstrap) {
     print PHP_EOL . 'Generating site...';
     $bootstrap("selfupdater/build/site", $configuration['to']);
