@@ -1,7 +1,11 @@
 <?php /** @noinspection PhpUndefinedVariableInspection */
 declare(strict_types=1);
 
-$configuration = $validate([]);
+use rikmeijer\Bootstrap\Configuration;
+
+$configuration = $validate([
+    'from' => Configuration::path('storage', 'sabre', 'files', 'blog')
+]);
 
 return static function (string $to) use ($configuration, $bootstrap): array {
     print PHP_EOL . 'Opening blogs in ' . $configuration['from'];

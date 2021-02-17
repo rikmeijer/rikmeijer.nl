@@ -1,10 +1,13 @@
 <?php /** @noinspection PhpUndefinedVariableInspection */
 declare(strict_types=1);
 
+use rikmeijer\Bootstrap\Configuration;
 use Twig\Environment;
 use Twig\TwigFunction;
 
-$configuration = $validate([]);
+$configuration = $validate([
+    'images' => Configuration::default("/img")
+]);
 
 return static function (Environment $twig) use ($configuration) : void {
     $twig->addFunction(new TwigFunction('img', function (string $path, float $size = 1) use ($configuration) {

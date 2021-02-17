@@ -1,9 +1,13 @@
 <?php /** @noinspection PhpUndefinedVariableInspection */
 declare(strict_types=1);
 
+use rikmeijer\Bootstrap\Configuration;
 use Webmozart\PathUtil\Path;
 
-$configuration = $validate([]);
+$configuration = $validate([
+    'www-user' => Configuration::default('www-data'), // Ubuntu
+    'www-group' => Configuration::default('www-data') // Ubuntu
+]);
 
 return $creator = static function (string $path) use (&$creator, $configuration): callable {
     if (!is_dir($path)) {

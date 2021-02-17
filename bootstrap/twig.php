@@ -4,7 +4,12 @@ declare(strict_types=1);
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
-$configuration = $validate([]);
+use rikmeijer\Bootstrap\Configuration;
+
+$configuration = $validate([ // must be same as basename of resource loader
+    'templates' => Configuration::path('resources', 'twig'),
+    'cache' => Configuration::path('storage', 'twig')
+]);
 
 return static function (string $name, array $context) use ($configuration, $bootstrap): string {
     $loader = new FilesystemLoader($configuration['templates']);

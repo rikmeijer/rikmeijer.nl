@@ -1,9 +1,12 @@
 <?php /** @noinspection PhpUndefinedVariableInspection */
 declare(strict_types=1);
 
+use rikmeijer\Bootstrap\Configuration;
 use Sabre\DAV;
 
-$configuration = $validate([]);
+$configuration = $validate([
+    'files-path' => Configuration::path('storage', 'sabre', 'files')
+]);
 
 return static function () use ($configuration, $bootstrap): DAV\Server {
     $pdo = $bootstrap("sabre/pdo");
