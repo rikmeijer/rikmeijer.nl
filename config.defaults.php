@@ -3,10 +3,6 @@
 use Webmozart\PathUtil\Path;
 
 return [
-    'selfupdater' => [
-        'load-development-libraries' => false,
-        'storages' => ['twig', 'sabre', 'sabre/data', 'sabre/files', 'sabre/files/blog']
-    ],
     'selfupdater/directory' => [
         'www-user' => 'www-data', // Ubuntu
         'www-group' => 'www-data' // Ubuntu
