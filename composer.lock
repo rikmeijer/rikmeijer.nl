@@ -235,16 +235,16 @@
         },
         {
             "name": "rikmeijer/bootstrap",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rikmeijer/Bootstrap.git",
-                "reference": "53631e59da0daef7670230ff9272f73227b39fac"
+                "reference": "cdeac1c679db8d31120e3623e404e65b75ee4f8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rikmeijer/Bootstrap/zipball/53631e59da0daef7670230ff9272f73227b39fac",
-                "reference": "53631e59da0daef7670230ff9272f73227b39fac",
+                "url": "https://api.github.com/repos/rikmeijer/Bootstrap/zipball/cdeac1c679db8d31120e3623e404e65b75ee4f8a",
+                "reference": "cdeac1c679db8d31120e3623e404e65b75ee4f8a",
                 "shasum": ""
             },
             "require": {
@@ -267,9 +267,9 @@
             "description": "Bootstrap Closure for loading resources",
             "support": {
                 "issues": "https://github.com/rikmeijer/Bootstrap/issues",
-                "source": "https://github.com/rikmeijer/Bootstrap/tree/1.1.0"
+                "source": "https://github.com/rikmeijer/Bootstrap/tree/1.1.1"
             },
-            "time": "2021-02-17T19:58:28+00:00"
+            "time": "2021-02-17T20:11:14+00:00"
         },
         {
             "name": "sabre/dav",

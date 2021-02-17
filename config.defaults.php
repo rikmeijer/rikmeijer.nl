@@ -11,10 +11,6 @@ return [
         'www-user' => 'www-data', // Ubuntu
         'www-group' => 'www-data' // Ubuntu
     ],
-    'selfupdater/build' => [
-        'to' => Path::join(__DIR__, 'public'),
-        'custom-scss' => Path::join(__DIR__, 'resources', 'scss', 'custom.scss'),
-    ],
     'selfupdater/build/posts' => [
         'from' => Path::join(__DIR__, 'storage', 'sabre', 'files', 'blog')
     ],
