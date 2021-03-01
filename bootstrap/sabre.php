@@ -1,4 +1,4 @@
-<?php /** @noinspection PhpUndefinedVariableInspection */
+<?php
 declare(strict_types=1);
 
 namespace rikmeijer\nl;
@@ -10,13 +10,15 @@ use Sabre\DAV;
 use Sabre\DAV\Locks\Plugin;
 use Sabre\DAVACL\PrincipalBackend\PDO;
 use Sabre\DAVACL\PrincipalCollection;
+use function rikmeijer\nl\sabre\auth;
 use function rikmeijer\nl\sabre\pdo;
+use function rikmeijer\nl\sabre\validate;
 
-$configuration = $validate([
+$configuration = validate([
     'files-path' => Configuration::path('storage', 'sabre', 'files')
 ]);
 
-return static function () use ($configuration, $bootstrap): DAV\Server {
+return static function () use ($configuration): DAV\Server {
     $pdo = pdo();
     $rootDirectory = new DAV\FS\Directory($configuration['files-path']);
     $principalBackend = new PDO($pdo);
@@ -39,7 +41,7 @@ return static function () use ($configuration, $bootstrap): DAV\Server {
     $carddavPlugin = new \Sabre\CardDAV\Plugin();
     $server->addPlugin($carddavPlugin);
 
-    $server->addPlugin($bootstrap("sabre/auth", $pdo));
+    $server->addPlugin(auth($pdo));
 
     $aclPlugin = new \Sabre\DAVACL\Plugin();
     $server->addPlugin($aclPlugin);

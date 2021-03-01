@@ -1,4 +1,4 @@
-<?php /** @noinspection PhpUndefinedVariableInspection */
+<?php
 declare(strict_types=1);
 
 namespace rikmeijer\nl\selfupdater;
