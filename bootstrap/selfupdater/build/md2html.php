@@ -1,9 +1,13 @@
-<?php /** @noinspection PhpUndefinedVariableInspection */
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
-return static function (string $title, string $post) use ($bootstrap): string {
-    return $bootstrap('twig', 'blog/post.twig', [
+namespace rikmeijer\nl\selfupdater\build;
+
+use function rikmeijer\nl\parsedown;
+use function rikmeijer\nl\twig;
+
+return static function (string $title, string $post) : string {
+    return twig('blog/post.twig', [
         'title' => $title,
-        'content' => $bootstrap('parsedown', file_get_contents($post))
+        'content' => parsedown(file_get_contents($post))
     ]);
 };

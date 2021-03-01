@@ -1,17 +1,21 @@
 <?php /** @noinspection PhpUndefinedVariableInspection */
 declare(strict_types=1);
 
+namespace rikmeijer\nl;
+
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
 use rikmeijer\Bootstrap\Configuration;
+use function rikmeijer\nl\twig\img;
+use function rikmeijer\nl\twig\subresource;
 
-$configuration = $validate([ // must be same as basename of resource loader
+$configuration = twig\validate([ // must be same as basename of resource loader
     'templates' => Configuration::path('resources', 'twig'),
     'cache' => Configuration::path('storage', 'twig')
 ]);
 
-return static function (string $name, array $context) use ($configuration, $bootstrap): string {
+return static function (string $name, array $context) use ($configuration): string {
     $loader = new FilesystemLoader($configuration['templates']);
 
     $options = [];
@@ -20,8 +24,8 @@ return static function (string $name, array $context) use ($configuration, $boot
     }
 
     $twig = new Environment($loader, $options);
-    $bootstrap("twig/img", $twig);
-    $bootstrap("twig/subresource", $twig);
+    img($twig);
+    subresource($twig);
 
     return $twig->render($name, $context);
 };

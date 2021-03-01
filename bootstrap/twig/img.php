@@ -1,11 +1,12 @@
-<?php /** @noinspection PhpUndefinedVariableInspection */
-declare(strict_types=1);
+<?php declare(strict_types=1);
+
+namespace rikmeijer\nl\twig;
 
 use rikmeijer\Bootstrap\Configuration;
 use Twig\Environment;
 use Twig\TwigFunction;
 
-$configuration = $validate([
+$configuration = \rikmeijer\nl\twig\img\validate([
     'images' => Configuration::default("/img")
 ]);
 

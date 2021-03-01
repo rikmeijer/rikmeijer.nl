@@ -1,10 +1,13 @@
 <?php /** @noinspection PhpUndefinedVariableInspection */
 declare(strict_types=1);
 
+namespace rikmeijer\nl\selfupdater;
+
 use rikmeijer\Bootstrap\Configuration;
 use Webmozart\PathUtil\Path;
+use function rikmeijer\nl\selfupdater\build\site;
 
-$configuration = $validate([
+$configuration = build\validate([
     'to' => Configuration::path('public'),
     'custom-scss' => Configuration::path('resources','scss','custom.scss'),
     'sass-binary' => static function(?string $path) {
@@ -17,14 +20,14 @@ $configuration = $validate([
     }
 ]);
 
-return static function () use ($configuration, $bootstrap) {
+return static function () use ($configuration) {
     print PHP_EOL . 'Generating site...';
-    $bootstrap("selfupdater/build/site", $configuration['to']);
+    site($configuration['to']);
     print 'done';
 
     print PHP_EOL . 'Generating CSS...';
     $customCSSFile = Path::join($configuration['to'], 'css', 'custom.css');
-    $bootstrap("selfupdater/directory", dirname($customCSSFile));
+    directory(dirname($customCSSFile));
     passthru($configuration['sass-binary'] . ' ' . escapeshellarg($configuration['custom-scss']) . ' ' . escapeshellarg($customCSSFile));
     echo 'done';
 };

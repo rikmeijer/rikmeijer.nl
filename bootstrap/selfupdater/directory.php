@@ -1,10 +1,13 @@
 <?php /** @noinspection PhpUndefinedVariableInspection */
 declare(strict_types=1);
 
+namespace rikmeijer\nl\selfupdater;
+
 use rikmeijer\Bootstrap\Configuration;
+use RuntimeException;
 use Webmozart\PathUtil\Path;
 
-$configuration = $validate([
+$configuration = \rikmeijer\nl\selfupdater\directory\validate([
     'www-user' => Configuration::default('www-data'), // Ubuntu
     'www-group' => Configuration::default('www-data') // Ubuntu
 ]);

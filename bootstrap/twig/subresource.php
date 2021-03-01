@@ -1,12 +1,13 @@
-<?php /** @noinspection PhpUndefinedVariableInspection */
-declare(strict_types=1);
+<?php declare(strict_types=1);
+
+namespace rikmeijer\nl\twig;
 
 use rikmeijer\Bootstrap\Configuration;
 use rikmeijer\rikmeijernl\Twig\Subresource;
 use Twig\Environment;
 use Twig\TwigFunction;
 
-$configuration = $validate([
+$configuration = \rikmeijer\nl\twig\subresource\validate([
     'integrity-hashes' => Configuration::default([
         "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" => "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm",
         "https://code.jquery.com/jquery-3.2.1.slim.min.js" => "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN",
