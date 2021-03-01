@@ -18,7 +18,7 @@ $configuration = validate([
     'files-path' => Configuration::path('storage', 'sabre', 'files')
 ]);
 
-return static function () use ($configuration): DAV\Server {
+return static function () use ($configuration): void {
     $pdo = pdo();
     $rootDirectory = new DAV\FS\Directory($configuration['files-path']);
     $principalBackend = new PDO($pdo);
@@ -52,6 +52,5 @@ return static function () use ($configuration): DAV\Server {
 
     $server->addPlugin(new DAV\Browser\Plugin());
 
-
-    return $server;
+    $server->exec();
 };
