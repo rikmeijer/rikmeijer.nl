@@ -2,16 +2,14 @@
 
 namespace rikmeijer\nl\sabre;
 
-use rikmeijer\Bootstrap\Configuration;
 use Sabre\DAV\Auth\Backend\PDO;
 use Sabre\DAV\Auth\Plugin;
+use function rikmeijer\Bootstrap\configuration\string;
 
-$configuration = auth\validate([
-    'realm' => Configuration::default('BaikalDAV')
-]);
-
-return static function () use ($configuration): Plugin {
+return auth\configure(static function (array $configuration) : Plugin {
     $authBackend = new PDO(pdo());
     $authBackend->setRealm($configuration['realm']);
     return new Plugin($authBackend);
-};
+}, [
+    'realm' => string('BaikalDAV')
+]);

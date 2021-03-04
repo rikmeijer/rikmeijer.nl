@@ -3,12 +3,10 @@ declare(strict_types=1);
 
 namespace rikmeijer\nl\sabre;
 
-use PDO;
+use PDO as _PDO;
 
-$configuration = \rikmeijer\nl\sabre\pdo\validate([]);
-
-return static function() use ($configuration) : PDO {
-    $pdo = new PDO($configuration['dsn'], $configuration['username'], $configuration['password']);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+return pdo\configure(static function (array $configuration) : _PDO {
+    $pdo = new _PDO($configuration['dsn'], $configuration['username'], $configuration['password']);
+    $pdo->setAttribute(_PDO::ATTR_ERRMODE, _PDO::ERRMODE_EXCEPTION);
     return $pdo;
-};
+}, []);

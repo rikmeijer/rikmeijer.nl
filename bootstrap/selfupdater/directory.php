@@ -3,16 +3,11 @@ declare(strict_types=1);
 
 namespace rikmeijer\nl\selfupdater;
 
-use rikmeijer\Bootstrap\Configuration;
 use RuntimeException;
 use Webmozart\PathUtil\Path;
+use function rikmeijer\Bootstrap\configuration\string;
 
-$configuration = \rikmeijer\nl\selfupdater\directory\validate([
-    'www-user' => Configuration::default('www-data'), // Ubuntu
-    'www-group' => Configuration::default('www-data') // Ubuntu
-]);
-
-return $creator = static function (string $path) use (&$creator, $configuration): callable {
+return $creator = directory\configure(static function (array $configuration, string $path) use (&$creator): callable {
     if (!is_dir($path)) {
         print PHP_EOL . 'Creating ' . $path . '...';
         if (!@mkdir($path, 0777, true) && !is_dir($path)) {
@@ -30,4 +25,7 @@ return $creator = static function (string $path) use (&$creator, $configuration)
     return static function(string $directory) use ($creator, $path) : callable {
         return $creator(Path::join($path, $directory));
     };
-};
+}, [
+    'www-user' => string('www-data'),
+    'www-group' => string('www-data')
+]);

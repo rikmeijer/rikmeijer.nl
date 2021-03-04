@@ -3,22 +3,17 @@ declare(strict_types=1);
 
 namespace rikmeijer\nl;
 
-use rikmeijer\Bootstrap\Configuration;
 use Sabre\CalDAV\CalendarRoot;
 use Sabre\CardDAV\AddressBookRoot;
 use Sabre\DAV;
 use Sabre\DAV\Locks\Plugin;
 use Sabre\DAVACL\PrincipalBackend\PDO;
 use Sabre\DAVACL\PrincipalCollection;
+use function rikmeijer\Bootstrap\configuration\path;
 use function rikmeijer\nl\sabre\auth;
 use function rikmeijer\nl\sabre\pdo;
-use function rikmeijer\nl\sabre\validate;
 
-$configuration = validate([
-    'files-path' => Configuration::path('storage', 'sabre', 'files')
-]);
-
-return static function () use ($configuration): void {
+return sabre\configure(static function (array $configuration) : void {
     $pdo = pdo();
     $rootDirectory = new DAV\FS\Directory($configuration['files-path']);
     $principalBackend = new PDO($pdo);
@@ -53,4 +48,6 @@ return static function () use ($configuration): void {
     $server->addPlugin(new DAV\Browser\Plugin());
 
     $server->exec();
-};
+}, [
+    'files-path' => path('storage', 'sabre', 'files')
+]);

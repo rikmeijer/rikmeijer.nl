@@ -6,16 +6,11 @@ namespace rikmeijer\nl;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
-use rikmeijer\Bootstrap\Configuration;
+use function rikmeijer\Bootstrap\configuration\path;
 use function rikmeijer\nl\twig\img;
 use function rikmeijer\nl\twig\subresource;
 
-$configuration = twig\validate([ // must be same as basename of resource loader
-    'templates' => Configuration::path('resources', 'twig'),
-    'cache' => Configuration::path('storage', 'twig')
-]);
-
-return static function (string $name, array $context) use ($configuration): string {
+return twig\configure(static function (array $configuration, string $name, array $context) : string {
     $loader = new FilesystemLoader($configuration['templates']);
 
     $options = [];
@@ -28,4 +23,7 @@ return static function (string $name, array $context) use ($configuration): stri
     subresource($twig);
 
     return $twig->render($name, $context);
-};
+}, [
+    'templates' => path('resources', 'twig'),
+    'cache' => path('storage', 'twig')
+]);
