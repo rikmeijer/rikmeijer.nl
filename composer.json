@@ -16,7 +16,7 @@
         "ext-dom": "*",
         "twbs/bootstrap": "5.0.0-beta1",
         "twig/twig": "^3.0",
-        "rikmeijer/bootstrap": "^3.0.0",
+        "rikmeijer/bootstrap": "^0.4",
         "webmozart/path-util": "^2.3",
         "jblond/twig-trans": "v1.0.5",
         "codezero/browser-locale": "^3.1.0",
@@ -24,7 +24,7 @@
         "erusev/parsedown": "^1.7"
     },
     "require-dev" : {
-        "roave/security-advisories": "dev-master",
+        "roave/security-advisories": "dev-latest",
         "phpunit/phpunit": "^9.1.4"
     },
     "autoload": {

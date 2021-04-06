@@ -3,9 +3,10 @@ declare(strict_types=1);
 
 namespace rikmeijer\nl\selfupdater\build;
 
-use function rikmeijer\Bootstrap\configuration\path;
+use function rikmeijer\Bootstrap\configure;
+use function rikmeijer\Bootstrap\types\path;
 
-return posts\configure(static function (array  $configuration, string $to) : array {
+return configure(static function (array  $configuration, string $to) : array {
     print PHP_EOL . 'Opening blogs in ' . $configuration['from'];
     $posts = [];
     foreach (glob($configuration['from'] . DIRECTORY_SEPARATOR . '*.md') as $post) {
@@ -17,5 +18,5 @@ return posts\configure(static function (array  $configuration, string $to) : arr
     }
     return $posts;
 }, [
-    'from' => path('storage', 'sabre', 'files', 'blog')
+    'from' => path('storage/sabre/files/blog')
 ]);

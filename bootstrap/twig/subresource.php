@@ -5,9 +5,10 @@ namespace rikmeijer\nl\twig;
 use rikmeijer\rikmeijernl\Twig\Subresource as TwigSubResource;
 use Twig\Environment;
 use Twig\TwigFunction;
-use function rikmeijer\Bootstrap\configuration\arr;
+use function rikmeijer\Bootstrap\configure;
+use function rikmeijer\Bootstrap\types\arr;
 
-return subresource\configure(static function(array $configuration, Environment $twig) : void {
+return configure(static function(array $configuration, Environment $twig) : void {
     $twig->addFunction(new TwigFunction('subresource', new TwigSubResource($configuration), ['is_safe' => ['html']]));
 }, [
     'integrity-hashes' => arr([

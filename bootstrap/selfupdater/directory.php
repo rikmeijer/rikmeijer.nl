@@ -5,9 +5,10 @@ namespace rikmeijer\nl\selfupdater;
 
 use RuntimeException;
 use Webmozart\PathUtil\Path;
-use function rikmeijer\Bootstrap\configuration\string;
+use function rikmeijer\Bootstrap\configure;
+use function rikmeijer\Bootstrap\types\string;
 
-return $creator = directory\configure(static function (array $configuration, string $path) use (&$creator): callable {
+return $creator = configure(static function (array $configuration, string $path) use (&$creator): callable {
     if (!is_dir($path)) {
         print PHP_EOL . 'Creating ' . $path . '...';
         if (!@mkdir($path, 0777, true) && !is_dir($path)) {

@@ -18,6 +18,9 @@
       <excludeFolder url="file://$MODULE_DIR$/storage" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twbs/bootstrap" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/lstrojny/functional-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nette/utils" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nette/php-generator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/rikmeijer/bootstrap" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
