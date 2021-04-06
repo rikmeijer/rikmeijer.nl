@@ -8,13 +8,20 @@ use function rikmeijer\Bootstrap\configure;
 use function rikmeijer\Bootstrap\types\string;
 
 return configure(static function (array $configuration, Environment $twig) : void {
-    $twig->addFunction(new TwigFunction('img', function (string $path, float $size = 1) use ($configuration) {
-        if ($size < 1) {
+    $twig->addFunction(new TwigFunction('img', function (string $path, ?float $size = null) use ($configuration) {
+        $img = '<img src="' . htmlentities($configuration['images'] . $path) . '" class="img-fluid"';
+        if ($size === null) {
+            $width = null;
+        } elseif ($size < 1) {
             $width = (100*$size) . '%';
         } else {
             $width = "".$size;
         }
-        return '<img src="' . htmlentities($configuration['images'] . $path) . '" class="img-fluid" width="' . htmlentities($width) . '" />';
+
+        if (isset($width)) {
+            $img .= ' width="' . htmlentities($width) . '"';
+        }
+        return $img . ' />';
     }, ['is_safe' => ['html']]));
 }, [
     'images' => string("/img")
