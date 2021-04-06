@@ -31,6 +31,9 @@
         "psr-4": {
             "rikmeijer\\rikmeijernl\\": "src/",
             "rikmeijer\\rikmeijernl\\tests\\": "tests/"
-        }
+        },
+        "files" : [
+            "bootstrap.php"
+        ]
     }
 }
