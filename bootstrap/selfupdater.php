@@ -27,7 +27,7 @@ return configure(static function (array $configuration, string $workingDir) : vo
     $configuration['sass-binary']('Generating CSS...', $configuration['custom-scss'], $customCSSFile);
     echo 'done';
 }, [
-    'storages' => arr(['twig', 'sabre', 'sabre/data', 'sabre/files', 'sabre/files/blog']),
+    'storages' => arr(['twig']),
     'to' => path('public'),
     'custom-scss' => path('resources/scss/custom.scss'),
     'sass-binary' => binary()
